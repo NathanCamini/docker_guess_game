@@ -3,7 +3,7 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN CYPRESS_INSTALL_BINARY=0 npm install
 
 ENV REACT_APP_BACKEND_URL=/api
 
